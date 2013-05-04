@@ -1,0 +1,25 @@
+default: &default
+  hosts:
+    - localhost:27017
+  options:
+    consistency: :strong
+    max_retries: 1
+    retry_interval: 0
+
+development:
+  sessions:
+    default:
+      <<: *default
+      database: group_blog_development
+
+test:
+  sessions:
+    default:
+      <<: *default
+      database: group_blog_test
+
+production:
+  sessions:
+    default:
+      <<: *default
+      database: group_blog_test

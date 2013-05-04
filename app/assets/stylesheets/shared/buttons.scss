@@ -1,0 +1,7 @@
+.button.green {
+  @include fancy-button(#ADD8E6);
+}
+
+.button.gray {
+  @include fancy-button(#808080);
+}
