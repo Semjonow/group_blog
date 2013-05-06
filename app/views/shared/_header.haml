@@ -1,0 +1,28 @@
+%nav.top-bar
+  %ul.title-area
+    %li.name
+      %h1
+        = link_to root_path do
+          -# if logged_in?
+            = image_tag(current_user.gravatar_url, :alt => current_user.email)
+            - if current_user.root?
+              #{root_user.username}'s Blog
+          -# else
+          = image_tag("hedgehog.png", :height => "45", :width => "70")
+
+
+  %section.top-bar-section
+    %ul.right
+      - if logged_in?
+        %li.has-form
+          = link_to "Log out", logout_path, :class => "button", :data => { :method => :delete }
+      - else
+        %li.has-form
+          = link_to register_path, :class => "button success", :data => { :remote => true, :action => "modal" } do
+            %i.icon-heart-empty
+            Join with Us
+        %li.divider
+        %li.has-form
+          = link_to login_path, :class => "button", :data => { :remote => true, :action => "modal" } do
+            %i.icon-signin
+            Log in

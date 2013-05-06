@@ -4,5 +4,7 @@
 
 window.GroupBlog = {
   Models: {}
-  Views:  {}
+  Views:  {
+    Common: {}
   }
+}

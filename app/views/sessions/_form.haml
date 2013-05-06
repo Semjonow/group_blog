@@ -1,0 +1,18 @@
+= form_for @user_session, :url => login_path, :remote => true do |form|
+  %fieldset
+    %legend
+      %i.icon-user
+      Sign In
+
+    .row
+      = form.text_field :username, :placeholder => "Username"
+
+    .row
+      = form.password_field :password, :placeholder => "Password"
+
+    .buttons.row
+      = link_to "javascript:void(0)", :class => "button success" do
+        %i.icon-signin
+        Log in
+
+      = link_to "Cancel", "javascript:void(0)", :class => "button secondary right", :data => { :action => "close" }

@@ -1,0 +1,21 @@
+= form_for @user, :url => register_path, :remote => true do |form|
+  %fieldset
+    %legend
+      %i.icon-heart
+      Sign Up
+
+    .row
+      = form.text_field :username, :placeholder => "Username"
+
+    .row
+      = form.email_field :email, :placeholder => "Email"
+
+    .row
+      = form.password_field :password, :placeholder => "Password"
+
+    .buttons.row
+      = link_to "javascript:void(0)", :class => "button success" do
+        %i.icon-ok
+        Let's Start
+
+      = link_to "Cancel", "javascript:void(0)", :class => "button secondary right", :data => { :action => "close" }

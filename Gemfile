@@ -11,7 +11,6 @@ group :assets do
   gem "compass-rails"
   gem "font-awesome-rails"
   gem "zurb-foundation"
-  gem "fancy-buttons"
 end
 
 group :development do
@@ -25,6 +24,7 @@ gem "mongoid"
 
 gem "haml-rails"
 gem "rocky"
+gem "gravtastic"
 
 gem "authlogic"
 gem "codegears"

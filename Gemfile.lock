@@ -44,7 +44,7 @@ GEM
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
     chunky_png (1.2.8)
-    codegears (0.0.1)
+    codegears (0.0.2)
       colorize
       httparty
       jquery-rails
@@ -68,11 +68,10 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    fancy-buttons (1.2.0)
-      compass (>= 0.11)
     font-awesome-rails (3.0.2.0)
       railties (>= 3.1)
     fssm (0.2.10)
+    gravtastic (3.2.6)
     haml (4.0.2)
       tilt
     haml-rails (0.4)
@@ -109,7 +108,7 @@ GEM
       origin (~> 1.0)
       tzinfo (~> 0.3.22)
     moped (1.4.5)
-    multi_json (1.7.2)
+    multi_json (1.7.3)
     multi_xml (0.5.3)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
@@ -181,7 +180,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
-    zurb-foundation (4.1.5)
+    zurb-foundation (4.1.6)
       sass (>= 3.2.0)
 
 PLATFORMS
@@ -193,8 +192,8 @@ DEPENDENCIES
   codegears
   coffee-rails
   compass-rails
-  fancy-buttons
   font-awesome-rails
+  gravtastic
   haml-rails
   html2haml
   jquery-rails

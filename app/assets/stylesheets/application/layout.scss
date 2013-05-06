@@ -6,3 +6,16 @@ body {
   font-size:14px;
   line-height:20px;
 }
+
+.top-bar {
+  background-color: #98AFC7;
+
+  .has-form {
+    background-color: #FFFFFF;
+  }
+}
+
+.top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+  border-right-color: #98AFC7;
+  border-left-color: #98AFC7;
+}
