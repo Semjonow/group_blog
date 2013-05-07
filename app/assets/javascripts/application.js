@@ -6,6 +6,7 @@
 //= require caman
 //= require gravtastic
 //= require foundation
+//= require sticky
 //= require underscore
 //= require backbone
 //= require middleware
