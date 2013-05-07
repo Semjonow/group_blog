@@ -11,7 +11,7 @@
       = form.password_field :password, :placeholder => "Password"
 
     .buttons.row
-      = link_to "javascript:void(0)", :class => "button success" do
+      = link_to "javascript:void(0)", :class => "button success", :data => { :action => "submit" } do
         %i.icon-signin
         Log in
 

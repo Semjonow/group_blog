@@ -2,6 +2,7 @@ class GroupBlog.Views.Common.ModalForm extends Middleware.Component.JsonForm
   constructor: (@container) ->
     super(@container)
     @container.foundation("reveal", "open")
+
     @closeButton = @container.find("*[data-action='close']")
     @closeButton.on "click", @close
 
@@ -13,7 +14,7 @@ class GroupBlog.Views.Common.ModalForm extends Middleware.Component.JsonForm
     window.location.replace(json["url"])
 
   updateForm: (event, json) =>
-    @container.html(json["template"])
+    @container.find("form").replaceWith(json["template"])
     @reBind()
 
   close: =>

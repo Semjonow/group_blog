@@ -8,6 +8,12 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    @user = User.new(params[:user])
+    if @user.save
+      log_in(@user)
+      render :json => { :completed => true, :url => root_url }
+    else
+      render :json => { :completed => false, :template => render_to_string(:partial => "users/form") }
+    end
   end
 end

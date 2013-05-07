@@ -8,7 +8,6 @@
 //= require foundation/foundation
 //= require foundation/foundation.reveal
 //= require foundation/foundation.topbar
-//= require sticky
 //= require underscore
 //= require backbone
 //= require middleware

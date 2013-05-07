@@ -18,7 +18,9 @@
     %ul.right
       - if logged_in?
         %li.has-form
-          = link_to "Log out", logout_path, :class => "button", :data => { :method => :delete }
+          = link_to logout_path, :class => "button", :data => { :method => :delete } do
+            %i.icon-signout
+            Log out
       - else
         %li.has-form
           = link_to register_path, :class => "button success", :data => { :remote => true, :action => "modal" } do

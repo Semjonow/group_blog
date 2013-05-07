@@ -10,6 +10,17 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @user_session = log_in(params[:user_session])
 
+    if logged_in?
+      render :json => { :completed => true, :url => back_or_default(root_url) }
+    else
+      render :json => { :completed => false, :template => render_to_string(:partial => "sessions/form") }
+    end
+  end
+
+  def destroy
+    current_user_session.destroy
+    redirect_to root_path
   end
 end
