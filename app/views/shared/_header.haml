@@ -3,13 +3,9 @@
     %li.name
       %h1
         = link_to root_path do
-          -# if logged_in?
-            = image_tag(current_user.gravatar_url, :alt => current_user.email)
-            - if current_user.root?
-              #{root_user.username}'s Blog
-          -# else
           = image_tag("hedgehog.png", :height => "45", :width => "70")
-          Häcker
+          - if logged_in?
+            = image_tag(current_user.gravatar_url, :alt => current_user.email)
     %li.toggle-topbar.menu-icon
       %a{ :href => "javascript:void(0)"}
         %span
@@ -17,6 +13,11 @@
   %section.top-bar-section
     %ul.right
       - if logged_in?
+        %li.has-form
+          = link_to new_invite_path, :class => "button success", :data => { :remote => true, :action => "modal" } do
+            %i.icon-group
+            Invite friends
+        %li.divider
         %li.has-form
           = link_to logout_path, :class => "button", :data => { :method => :delete } do
             %i.icon-signout

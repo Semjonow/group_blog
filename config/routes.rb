@@ -6,5 +6,9 @@ GroupBlog::Application.routes.draw do
   match "/register" => "users#new",      :via => :get,    :as => :register
   match "/register" => "users#create",   :via => :post,   :as => :register
 
-  root :to => "application#index"
+  resources :invites, :only => [:new, :create, :show] do
+    put :accept, :on => :member
+  end
+
+  root :to => "blogs#index"
 end

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :check_logged_out
+
   layout false
 
   def new
@@ -9,7 +10,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user.root = true
+
     if @user.save
+      @user.build_blog.save!
+
       log_in(@user)
       render :json => { :completed => true, :url => root_url }
     else

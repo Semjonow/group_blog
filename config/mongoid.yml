@@ -2,6 +2,7 @@ default: &default
   hosts:
     - localhost:27017
   options:
+    raise_not_found_error: false
     consistency: :strong
     max_retries: 1
     retry_interval: 0

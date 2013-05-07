@@ -8,13 +8,13 @@ class ApplicationController < ActionController::Base
   def check_logged_in
     unless logged_in?
       store_location
-      redirect_to login_url(:subdomain => "login")
+      redirect_to root_path
     end
   end
 
   def check_logged_out
     if logged_in?
-      redirect_to root_url(:subdomain => false)
+      redirect_to root_path
     end
   end
 

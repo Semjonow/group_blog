@@ -1,0 +1,16 @@
+.large-6.large-offset-3.columns
+  = form_for @invite, :url => accept_invite_path(@invite.token), :method => :put do |form|
+    %fieldset
+      %legend Accept invite from #{@user.username}
+
+      .row
+        = form.text_field :username, :placeholder => "Username"
+
+      .row
+        = form.password_field :password, :placeholder => "Password"
+
+      .buttons.row
+        %button.button.success{ :type => "submit" }
+          %i.icon-ok
+          Accept
+        = link_to "Cancel", root_path, :class => "button secondary right"

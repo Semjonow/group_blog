@@ -27,4 +27,5 @@ gem "rocky"
 gem "gravtastic"
 
 gem "authlogic"
+gem "postmark-rails"
 gem "codegears"
