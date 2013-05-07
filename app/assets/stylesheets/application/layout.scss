@@ -7,7 +7,7 @@ body {
   line-height:20px;
 }
 
-.top-bar {
+.top-bar, .top-bar.expanded .title-area {
   background-color: #98AFC7;
 
   .has-form {
@@ -18,6 +18,10 @@ body {
 .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
   border-right-color: #98AFC7;
   border-left-color: #98AFC7;
+}
+
+.contain-to-grid {
+  background-color: #F8F8F8;
 }
 
 #content {

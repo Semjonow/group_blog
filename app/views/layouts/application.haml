@@ -8,6 +8,6 @@
     = csrf_meta_tags
   %body
     #header.row{ :data => { :block => "header" } }
-      = render "shared/header"
+      .contain-to-grid.sticky= render "shared/header"
     #content.row
       = yield

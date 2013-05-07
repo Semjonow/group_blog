@@ -4,7 +4,7 @@ class GroupBlog.Views.Common.Header extends Middleware.System.Base
     @initElements()
 
   initElements: =>
-    @container.find("*[data-block='top_bar']").sticky()
+    $(document).foundation("topbar")
 
     @modalButtons = @container.find("a[data-action='modal']")
     @modalButtons.on "ajax:success", @createResponse
