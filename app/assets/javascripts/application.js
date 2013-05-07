@@ -5,7 +5,8 @@
 //= require scrollbar
 //= require caman
 //= require gravtastic
-//= require foundation
+//= require foundation/foundation
+//= require foundation/foundation.reveal
 //= require sticky
 //= require underscore
 //= require backbone

@@ -41,16 +41,7 @@ module Authenticable
     end
 
     def quoted_table_name
-      'users'
-    end
-
-    def primary_key
-      # FIXME: Is this check good enough?
-      if caller.first.to_s =~ /(persist|session)/
-        :_id
-      else
-        @@primary_key
-      end
+      "users"
     end
 
     def default_timezone
@@ -61,14 +52,17 @@ module Authenticable
       find *args
     end
 
-    # Change this to your preferred login field
-    def find_by_username(username)
-      where(:username => username).first
-    end
-
     def with_scope(query)
       query = where(query) if query.is_a?(Hash)
       yield query
+    end
+
+    def primary_key
+      if caller.first.to_s =~ /(persist|session)/
+        :_id
+      else
+        @@primary_key
+      end
     end
   end
 

@@ -1,4 +1,4 @@
-%nav.top-bar
+%nav.top-bar.fixed#top-bar{ :data => { :block => "top_bar" } }
   %ul.title-area
     %li.name
       %h1
@@ -10,8 +10,6 @@
           -# else
           = image_tag("hedgehog.png", :height => "45", :width => "70")
           Häcker
-    %li.toggle-topbar.menu-icon
-      %a{ :href => "#" } Menu
 
 
   %section.top-bar-section
