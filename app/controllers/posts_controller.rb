@@ -9,11 +9,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.blog.posts.build(params[:post])
+    @post      = current_user.blog.posts.build(params[:post])
+    @post.user = current_user
+
     if @post.save
       render :json => { :completed => true, :url => root_url }
     else
       render :json => { :completed => false, :template => render_to_string(:partial => "posts/form") }
     end
+  end
+
+  def destroy
+    post = current_user.posts.find(params[:id])
+    post.destroy
+    redirect_to :back
   end
 end

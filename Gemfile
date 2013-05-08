@@ -25,6 +25,7 @@ gem "redactor-rails"
 gem "carrierwave"
 gem "carrierwave-mongoid", :require => "carrierwave/mongoid"
 gem "mini_magick"
+gem "nokogiri"
 
 gem "haml-rails"
 gem "rocky"

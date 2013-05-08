@@ -1,0 +1,11 @@
+.reveal-modal.medium{ :id => "comments", :data => { :block => "modal_form" } }
+  %a.close-reveal-modal{ :data => { :action => "close" } } &#215
+  .row
+    %center
+      %h4
+        %i.icon-comments
+  .row
+    = render @comments
+  %br/
+  .row
+    = render "form"

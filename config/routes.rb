@@ -12,7 +12,11 @@ GroupBlog::Application.routes.draw do
     put :accept, :on => :member
   end
 
-  resources :posts, :only => [:new, :create]
+  resources :blogs, :only => [:show]
+
+  resources :posts, :only => [:new, :create, :destroy] do
+    resources :comments, :only => [:index, :create]
+  end
 
   root :to => "blogs#index"
 end

@@ -3,6 +3,9 @@ class User
   include Mongoid::Timestamps
 
   has_many :invites
+  has_many :posts
+  has_many :comments
+
   belongs_to :blog
 
   include Authenticable

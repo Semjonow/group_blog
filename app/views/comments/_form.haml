@@ -1,0 +1,12 @@
+= form_for @comment, :url => post_comments_path(@post), :remote => true do |form|
+  - unless logged_in?
+    = form.email_field :email, :placeholder => "Your email"
+
+  .row
+    = form.text_area :text
+
+  .buttons.row
+    .right
+      = link_to "javascript:void(0)", :class => "button success", :data => { :action => "submit" } do
+        %i.icon-ok
+        Save

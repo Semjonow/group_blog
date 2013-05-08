@@ -6,5 +6,6 @@ window.GroupBlog = {
   Models: {}
   Views:  {
     Common: {}
+    Posts:  {}
   }
 }

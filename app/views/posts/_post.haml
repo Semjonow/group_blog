@@ -1,0 +1,20 @@
+.row
+  .row
+    %h5
+      .left
+        = image_tag(post.user.gravatar_url, :alt => post.user.email, :title => post.user.username)
+        %i.icon-ok
+        Added #{time_ago_in_words(post.created_at)} ago
+      - if current_user == post.user
+        .right
+          = link_to post_path(post), :data => { :method => :delete }, :class => "tiny button alert" do
+            %i.icon-remove
+  %br/
+  .row
+    .panel
+      = post.text.html_safe
+  .row
+    .right
+      = link_to post_comments_path(post), :class => "small button", :data => { :action => "comments", :remote => true } do
+        %i.icon-comments
+        #{pluralize(post.comments.count, "comment")}

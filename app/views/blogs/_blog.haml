@@ -1,0 +1,4 @@
+.row
+  = link_to blog_path(blog) do
+    %i.icon-eye-open
+    #{time_ago_in_words(blog.created_at)} ago

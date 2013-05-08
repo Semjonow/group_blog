@@ -1,0 +1,13 @@
+- unless comment.new_record?
+  .row
+    .panel.radius
+      - unless comment.user.nil?
+        = image_tag(comment.user.gravatar_url, :alt => comment.user.email, :title => comment.user.username, :width => "25", :height => "25")
+      - else
+        = image_tag(guest(comment.email).gravatar_url, :alt => comment.email, :title => comment.email, :width => "25", :height => "25")
+      &nbsp;
+      %i
+        #{comment.created_at.strftime("%H:%M")}
+      %i.icon-comments-alt
+        = ": "
+      = comment.text
