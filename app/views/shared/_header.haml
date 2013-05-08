@@ -5,7 +5,8 @@
         = link_to root_path do
           = image_tag("hedgehog.png", :height => "45", :width => "70")
           - if logged_in?
-            = image_tag(current_user.gravatar_url, :alt => current_user.email)
+            - current_user.blog.users.each do |user|
+              = image_tag(user.gravatar_url, :alt => user.email, :title => user.username)
     %li.toggle-topbar.menu-icon
       %a{ :href => "javascript:void(0)"}
         %span
@@ -13,6 +14,9 @@
   %section.top-bar-section
     %ul.right
       - if logged_in?
+        %li.has-form
+          = link_to new_post_path, :class => "button success", :data => { :remote => true, :action => "modal" } do
+            %i.icon-pencil
         %li.has-form
           = link_to new_invite_path, :class => "button success", :data => { :remote => true, :action => "modal" } do
             %i.icon-group

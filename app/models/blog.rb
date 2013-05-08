@@ -3,4 +3,5 @@ class Blog
   include Mongoid::Timestamps
 
   has_many :users
+  has_many :posts
 end
