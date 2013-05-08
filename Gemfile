@@ -34,3 +34,5 @@ gem "gravtastic"
 gem "authlogic"
 gem "postmark-rails"
 gem "codegears"
+
+gem "unicorn"
