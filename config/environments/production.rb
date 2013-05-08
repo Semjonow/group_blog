@@ -50,7 +50,7 @@ GroupBlog::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options   = { :host => "localhost:3000" }
+  config.action_mailer.default_url_options   = { :host => "173.255.229.72" }
   config.action_mailer.delivery_method       = :postmark
   config.action_mailer.postmark_settings     = { :api_key => "fc170a5f-28ab-4d1c-9696-02b13cbdf542" }
 
