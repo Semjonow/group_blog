@@ -20,4 +20,6 @@ class Post
     doc.css("style,script").remove
     self.text = doc.to_s
   end
+
+  default_scope order_by(:created_at => :desc)
 end

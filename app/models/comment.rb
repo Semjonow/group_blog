@@ -10,4 +10,6 @@ class Comment
 
   validate :text, :presence => true
   validate :email, :presence => true, :if => Proc.new{ |f| !f.user }
+
+  default_scope order_by(:created_at => :desc)
 end
