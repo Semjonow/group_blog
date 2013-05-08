@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user if logged_in?
 
     if @comment.save
-      render :json => { :completed => true, :url => root_url }
+      render :json => { :completed => true, :url => blog_url(@comment.post.blog) }
     else
       render :json => { :completed => false, :template => render_to_string("comments/form") }
     end
